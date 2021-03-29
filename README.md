@@ -59,7 +59,7 @@ The goals of this application include, but are not limited to:
 
 > Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
 
-[Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
+[Component Tree Sample](/Assets/InstaCloneComponentTree.png)
 
 #### Component Architecture
 
@@ -105,6 +105,7 @@ src
 
 ## Post-MVP
 Some Post-MVP features I plan to incorporate for this app are:
+- File and image upload
 - User associated data
 - Implementing user roles and limiting CRUD functionality
 - Streamlining UX format for better flow
