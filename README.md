@@ -4,8 +4,6 @@
 
 **InstaClone** is a RESTful Application using Ruby on Rails as a fully independent backend database and React as an interactive frontend. PostgreSQL syntax is being applied for queries to the database. InstaClone mimics the functionality of Instagram and showcases a different approach to the popular social media app.
 
-<br>
-
 ## MVP
 Minimal Viable Product:
 
@@ -14,8 +12,6 @@ Minimal Viable Product:
 - Full CRUD Front End
 - User Authorization/Authentication
 - User profile
-
-<br>
 
 ### Goals
 The goals of this application include, but are not limited to: 
@@ -57,13 +53,9 @@ The goals of this application include, but are not limited to:
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
-
 ![Component Tree Sample](/Assets/InstaCloneComponentTree.png)
 
 #### Component Architecture
-
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
 
 ``` structure
 
@@ -98,8 +90,7 @@ src
 
 #### ERD Model
 
-[ERD Sample](https://drive.google.com/file/d/1kLyQTZqfcA4jjKWQexfEkG2UspyclK8Q/view)
-<br>
+![ERD Sample](/Assets/InstaCloneERD.png)
 
 ***
 
