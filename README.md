@@ -64,8 +64,6 @@ src
 
 #### Time Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above.
-
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
 | Database Modeling   |    H     |     3 hrs      |     2 hrs     |    2 hrs    |
@@ -89,6 +87,7 @@ src
 
 ## Post-MVP
 Some Post-MVP features I plan to incorporate for this app are:
+- User Following 
 - File and image upload
 - User associated data
 - Implementing user roles and limiting CRUD functionality
