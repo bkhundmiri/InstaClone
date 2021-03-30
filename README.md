@@ -27,29 +27,17 @@ The goals of this application include, but are not limited to:
 
 #### Wireframes
 
-![Dummy Link](url)
+- Mobile Landing/Login & Sign Up
 
-- Desktop Landing
+![Wireframe 1](/Assets/InstaCloneWireframe1.png/)
 
-![Dummy Link](url)
+- Mobile Feed Page & Profile Page
 
-- Desktop Hero
+![Wireframe 2](/Assets/InstaCloneWireframe2.png)
 
-![Dummy Link](url)
+- Desktop Feed Page
 
-- Resource Index
-
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
+![Wireframe 3](/Assets/InstaCloneWireframe3.png)
 
 #### Component Tree
 
@@ -80,9 +68,14 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Database Modeling   |    H     |     3 hrs      |     2 hrs     |    2 hrs    |
+| Models              |    H     |     1 hrs      |     .5 hrs    |     TBD     |
+| Routes              |    H     |     1 hrs      |     .5 hrs    |     TBD     |
+| Controllers         |    H     |     1 hrs      |     .5 hrs    |     TBD     |
+| Full Crud Backend   |    H     |     2 hrs      |     .5 hrs    |     TBD     |
+| Frontend Services   |    H     |     1 hrs      |     1 hrs     |     TBD     |
+| Full Crud Frontend  |    H     |     2 hrs      |     2 hrs     |     TBD     |
+| CSS and Styling     |    L     |     6 hrs      |     3 hrs     |     TBD     |
 
 <br>
 
