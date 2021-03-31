@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :posts do 
-    resources :comments
+    resources :comments, shallow: true
   end
   get '/users/:user_id/posts', to: 'posts#index_user'
 

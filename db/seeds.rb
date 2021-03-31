@@ -8,6 +8,7 @@
 
 User.destroy_all
 Post.destroy_all
+Comment.destroy_all
 
 20.times { User.create!(
     username: Faker::Internet.username(separators: %w(. _ -)),
@@ -22,13 +23,18 @@ User.all.find_each do |user|
     )}
 end
 
-Post.all.find_each do |post|
-    2.times { Comment.create!(
-        content: Faker::Lorem.sentence,
-        post: post
-    )}
+User.all.find_each do |user|
+    @user = user
+    user.posts.find_each do |post|
+        2.times { Comment.create!(
+            content: Faker::Lorem.sentence,
+            post: post,
+            user: @user
+        )}
+    end
 end
 
 
 puts "Created #{User.all.count} Users"
 puts "Created #{Post.all.count} Posts"
+puts "Created #{Comment.all.count} Comments"

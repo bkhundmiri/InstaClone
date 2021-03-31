@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authorize_request, only: [ :create, :update, :destroy ]
   before_action :set_comment, only: [:show, :update, :destroy]
 
   # GET /comments
@@ -18,6 +19,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
     @comment.post = @post
+    @comment.user = @current_user
     if @comment.save
       render json: @comment, status: :created, location: @comment
     else
