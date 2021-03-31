@@ -48,7 +48,7 @@ The goals of this application include, but are not limited to:
 
 - Mobile Add Comment & Edit Profile Page
 
-![Wireframe 4](/Assets/InstaCloneWireframe4.png)
+![Wireframe 4](/Assets/InstacloneWireframe4.png)
 
 - Mobile Add Post and Edit Post Page
 
