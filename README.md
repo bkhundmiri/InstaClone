@@ -8,8 +8,8 @@
 Minimal Viable Product:
 
 - RESTful Application
-- Full CRUD backend
-- Full CRUD Front End
+- Full CRUD Ruby on Rails backend with 6 tables and appropriate associations
+- Full CRUD Front End using CRA
 - User Authorization/Authentication
 - User profile
 
@@ -22,6 +22,17 @@ The goals of this application include, but are not limited to:
 - User-friendly experience dedicated to efficiency
 
 <br>
+
+### Libraries and Dependencies
+
+| Library | Description |
+| --- | ----------- |
+| React | Front End Framework |
+| React Router Dom | allow inter page linking and routing for front end |
+| Axios | allow frontend to communicate with backend|
+| Materials UI | styled componenets to integrate into front end |
+| Ruby on Rails | back end server framework |
+| bcrypt/JWT | authorization setup |
 
 ### Client (Front End)
 
@@ -64,16 +75,26 @@ src
 
 #### Time Estimates
 
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
+| Component           | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
 | Database Modeling   |    H     |     3 hrs      |     2 hrs     |    2 hrs    |
 | Models              |    H     |     1 hrs      |     .5 hrs    |     TBD     |
-| Routes              |    H     |     1 hrs      |     .5 hrs    |     TBD     |
-| Controllers         |    H     |     1 hrs      |     .5 hrs    |     TBD     |
-| Full Crud Backend   |    H     |     2 hrs      |     .5 hrs    |     TBD     |
-| Frontend Services   |    H     |     1 hrs      |     1 hrs     |     TBD     |
-| Full Crud Frontend  |    H     |     2 hrs      |     2 hrs     |     TBD     |
-| CSS and Styling     |    L     |     6 hrs      |     3 hrs     |     TBD     |
+| Setting Up Basic Layout | H | 2 Hr |  Hr |
+| Testing API Routes | H | 3 Hr |  Hr |
+| Deploy API | H | 3 Hr |  Hr | 
+| Create React Front End | H | 3 Hr |  Hr | 
+| React Route/Links | H | 3 Hr |  Hr | 
+| React Post/Feed Component | H | 3 Hr |  Hr | 
+| React/JS post/put/delete calls | H | 3 Hr |  Hr | 
+| React Header/Footer | M | 3 Hr |  Hr | 
+| CSS Styling DESKTOP | H | 3 Hr |  Hr | 
+| CSS Styling MOBILE | H | 3 Hr |  Hr | 
+| POST MVP - Likes | L | 3 Hr | Hr | 
+| UI/UX breakpoints | M | 3 Hr |  Hr | 
+| Testing React Components | H | 3 Hr |  Hr | 
+| Testing CSS breakpoints | M | 3 Hr |  Hr | 
+| Hosting Final Product | M | 3 Hr |  Hr | 
+| Total Time | | 38 Hrs | Hrs | 
 
 <br>
 
