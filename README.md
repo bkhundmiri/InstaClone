@@ -110,7 +110,7 @@ src
 
 #### ERD Model
 
-![ERD Sample](/Assets/InstaCloneERD.png)
+![ERD Sample](/Assets/InstaCloneFinalERD.png)
 
 ***
 
