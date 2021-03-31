@@ -8,7 +8,7 @@
 Minimal Viable Product:
 
 - RESTful Application
-- Full CRUD Ruby on Rails backend with 6 tables and appropriate associations
+- Full CRUD Ruby on Rails backend with 3 tables and appropriate associations
 - Full CRUD Front End using CRA
 - User Authorization/Authentication
 - User profile
@@ -45,6 +45,14 @@ The goals of this application include, but are not limited to:
 - Mobile Feed Page & Profile Page
 
 ![Wireframe 2](/Assets/InstaCloneWireframe2.png)
+
+- Mobile Add Comment & Edit Profile Page
+
+![Wireframe 3](/Assets/InstaCloneWireframe3.png)
+
+- Mobile Add Post and Edit Post Page
+
+![Wireframe 3](/Assets/InstaCloneWireframe3.png)
 
 - Desktop Feed Page
 
