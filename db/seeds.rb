@@ -22,5 +22,13 @@ User.all.find_each do |user|
     )}
 end
 
+Post.all.find_each do |post|
+    2.times { Comment.create!(
+        content: Faker::Lorem.sentence,
+        post: post
+    )}
+end
+
+
 puts "Created #{User.all.count} Users"
 puts "Created #{Post.all.count} Posts"

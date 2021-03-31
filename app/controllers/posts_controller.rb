@@ -1,11 +1,17 @@
 class PostsController < ApplicationController
+  before_action :authorize_request, only: [ :create, :update, :destroy, :index_user ]
   before_action :set_post, only: [:show, :update, :destroy]
 
   # GET /posts
   def index
-    @user = User.find(params[:user_id])
-    @posts = Post.where(user_id: @user.id)
-    render json: @posts, include: :user, status: :ok
+    @posts = Post.all
+
+    render json: @posts, include: :comment, status: :ok
+  end
+
+  def index_user
+    @posts = Post.where(user_id: @current_user.id)
+    render json: @posts, status: :ok
   end
 
   # GET /posts/1
@@ -16,7 +22,7 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
-
+    @post.user = @current_user
     if @post.save
       render json: @post, status: :created, location: @post
     else
@@ -46,6 +52,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:content, :user_id)
+      params.require(:post).permit(:content)
     end
 end
