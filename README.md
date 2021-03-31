@@ -48,11 +48,11 @@ The goals of this application include, but are not limited to:
 
 - Mobile Add Comment & Edit Profile Page
 
-![Wireframe 3](/Assets/InstaCloneWireframe3.png)
+![Wireframe 4](/Assets/InstaCloneWireframe4.png)
 
 - Mobile Add Post and Edit Post Page
 
-![Wireframe 3](/Assets/InstaCloneWireframe3.png)
+![Wireframe 5](/Assets/InstaCloneWireframe5.png)
 
 - Desktop Feed Page
 
