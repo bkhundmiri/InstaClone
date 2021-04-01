@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   # GET /users
   def index
     @users = User.all
-
-    render json: @users
+    
+    render :json => { :user => @users.as_json(:except => [:password_digest], include: :posts) }
   end
 
   # GET /users/1

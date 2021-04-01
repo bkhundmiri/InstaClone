@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :users, shallow: true
 
   resources :posts, shallow: true do
-    resources :pictures, only: [:index, :create, :destroy]
-    resources :comments, only: [:index, :create, :destroy]
+    resources :pictures, only: [:create]
+    resources :comments, only: [:create, :destroy]
   end
 
   get '/users/:user_id/posts', to: 'posts#index_user'

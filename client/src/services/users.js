@@ -15,7 +15,7 @@ export const editUser = async (id, userData) => {
     return resp.data
 }
 
-export const destoryUser = async (id) => {
+export const destroyUser = async (id) => {
     const resp = await api.delete(`/users/${id}`)
     return resp
 }
