@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'
 
-  resources :users
-  resources :posts do
-    resources :pictures, shallow: true
-    resources :comments, shallow: true
+  resources :users, shallow: true
+
+  resources :posts, shallow: true do
+    resources :pictures, only: [:index, :create, :destroy]
+    resources :comments, only: [:index, :create, :destroy]
   end
+
   get '/users/:user_id/posts', to: 'posts#index_user'
 
   # User Comments

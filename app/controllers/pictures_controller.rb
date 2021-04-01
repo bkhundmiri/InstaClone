@@ -1,17 +1,12 @@
 class PicturesController < ApplicationController
-  before_action :authorize_request, only: [ :create, :update, :destroy ]
-  before_action :set_picture, only: [:show, :update, :destroy]
+  before_action :authorize_request, only: [ :create, :destroy ]
+  before_action :set_picture, only: [:destroy]
 
   # GET /pictures
   def index
     @post = Post.find(params[:post_id])
     @pictures = Picture.where(post_id: post.id)
     render json: @pictures, include: :post, :user, status: :ok
-  end
-
-  # GET /pictures/1
-  def show
-    render json: @picture
   end
 
   # POST /pictures
@@ -22,15 +17,6 @@ class PicturesController < ApplicationController
 
     if @picture.save
       render json: @picture, status: :created, location: @picture
-    else
-      render json: @picture.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /pictures/1
-  def update
-    if @picture.update(picture_params)
-      render json: @picture
     else
       render json: @picture.errors, status: :unprocessable_entity
     end
