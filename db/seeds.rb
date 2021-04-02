@@ -8,7 +8,6 @@
 
 User.destroy_all
 Post.destroy_all
-Picture.destroy_all
 Comment.destroy_all
 
 20.times { User.create!(
@@ -20,14 +19,8 @@ Comment.destroy_all
 User.all.find_each do |user|
     3.times { Post.create!(
         content: Faker::Hipster.sentence,
-        user: user
-    )}
-end
-
-Post.all.find_each do |post|
-    2.times { Picture.create!(
         img_url: Faker::LoremFlickr.image(search_terms: ['all']),
-        post: post
+        user: user
     )}
 end
 
@@ -45,5 +38,4 @@ end
 
 puts "Created #{User.all.count} Users"
 puts "Created #{Post.all.count} Posts"
-puts "Created #{Picture.all.count} Pictures"
 puts "Created #{Comment.all.count} Comments"

@@ -4,6 +4,7 @@ import { Switch, Route, useParams } from "react-router-dom";
 
 import Layout from "../../layouts/Layout";
 import Feed from "../../screens/Feed/Feed";
+import Profile from "../../screens/Profile/Profile"
 import Post from "../../components/Post/Post"
 
 
@@ -25,7 +26,7 @@ function MainContainer(props) {
     const { currentUser } = props;
     const { id } = useParams;
 
-    // console.log(currentUser);
+    console.log(currentUser);
 
   // useEffect(() => {
   //     const fetchAllUsers = async () => {
@@ -42,14 +43,17 @@ function MainContainer(props) {
         };
         fetchAllPosts()
     }, [])
+    console.log(allPosts);
 
     useEffect(() => {
         const fetchOneUserPosts = async () => {
-        const oneUserPostData = await getUserPosts();
-        setOneUserPost(oneUserPostData);
-        };
+            const oneUserPostData = await getUserPosts(currentUser.id);
+            setOneUserPost(oneUserPostData);
+        } 
         fetchOneUserPosts();
     }, []);
+    console.log(oneUserPost);
+
 
     // console.log(allPosts);
 
@@ -66,6 +70,13 @@ function MainContainer(props) {
                     <CreatePost 
                         currentUser={currentUser}
                         setAllPosts={setAllPosts}
+                    />
+                </Route>
+                <Route path='/profile'>
+                    <Profile 
+                        currentUser={currentUser}
+                        oneUserPost={oneUserPost}
+                        setOneUserPost={setOneUserPost}
                     />
                 </Route>
                 <Route path='/feed'>

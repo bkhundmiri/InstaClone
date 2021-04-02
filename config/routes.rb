@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :users, shallow: true
 
   resources :posts, shallow: true do
-    resources :pictures, only: [:create]
     resources :comments, only: [:create, :destroy]
   end
 

@@ -6,25 +6,25 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    render json: @posts, include: [:comments, :pictures, :user], status: :ok
+    render json: @posts, include: [:comments, :user], status: :ok
   end
 
   # GET /user/1/post/1
   def index_user
     @posts = Post.where(user_id: @current_user.id)
-    render json: @posts, include: [:comments, :pictures], status: :ok
+    render json: @posts, include: :comments, status: :ok
   end
 
   # GET /posts/1
   def show
-    render json: @post, include: [:comments, :pictures, :user], status: :ok
+    render json: @post, include: [:comments, :user], status: :ok
   end
 
   # POST /posts
   def create
     @post = Post.new(post_params)
     @post.user = @current_user
-    
+
     if @post.save
       render json: @post, status: :created
     else
@@ -54,6 +54,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:content)
+      params.require(:post).permit(:content, :img_url)
     end
 end
