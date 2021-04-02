@@ -35,13 +35,13 @@ function MainContainer(props) {
   //     fetchAllUsers()
   // }, [])
 
-    // useEffect(() => {
+    useEffect(() => {
         const fetchAllPosts = async () => {
             const allPostsData = await getAllPosts();
             setAllPosts(allPostsData)
         };
-        // fetchAllPosts()
-    // }, [])
+        fetchAllPosts()
+    }, [])
 
     useEffect(() => {
         const fetchOneUserPosts = async () => {
@@ -64,13 +64,14 @@ function MainContainer(props) {
             <Switch>
                 <Route path='/posts/new'>
                     <CreatePost 
+                        currentUser={currentUser}
                         setAllPosts={setAllPosts}
                     />
                 </Route>
                 <Route path='/feed'>
                     <Feed 
-                        fetchAllPosts={fetchAllPosts} 
                         allPosts={allPosts}
+                        setAllPosts={setAllPosts}
                     />
                 </Route>
             </Switch>

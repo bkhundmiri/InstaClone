@@ -2,19 +2,23 @@ import React from 'react';
 
 function Post(props) {
     const { post } = props
-    // console.log(post);
+    console.log(post);
+    
     return (
         <div>
             <div>
                 <div>{post.user.username}</div>
+                
             </div>
-            <img src={post.pictures[0].img_url} alt=""/>
+            
+            {post.pictures.length ? <img src={post.pictures[0].img_url} alt=""/> : null}
+            
             <div>
                 <div>{post.content}</div>
-                <div>{post.comments[0].content}</div>
+                {post.comments.length ? <div>{post.comments[0].content}</div> : null}
             </div>
         </div>
-    );
+    )
 }
 
 export default Post;

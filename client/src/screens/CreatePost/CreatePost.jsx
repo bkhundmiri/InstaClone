@@ -1,53 +1,57 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { postPicture } from '../../services/pictures';
 import { postPost } from '../../services/posts';
 
 
 export default function CreatePost(props) {
     const history = useHistory()
-    const { setAllPosts } = props
+    const { setAllPosts, currentUser } = props
+    const [postId, setPostId]= useState(null)
+    
     const [postData, setPostData] = useState({
         content: '',
     })
+    
     const [pictureData, setPictureData] = useState({
         img_url: '',
     })
+    
     const { content } = postData
     const { img_url } = pictureData
-    
-    const handlePictureCreate = async (pictureData) => {
-        const newPicture = await postPost(pictureData);
-        setAllPosts(prevState => [...prevState, newPicture]);
-    }
 
-    const handlePostCreate = async (postData) => {
+    const handleCreate = async (postData, post_id, pictureData) => {
         const newPost = await postPost(postData);
+        
+        setPostId(newPost.id);
         setAllPosts(prevState => [...prevState, newPost]);
+        
+        await postPicture(post_id, pictureData);
         history.push('/feed');
     }
+    
 
-    const handlePostChange = (e) => {
+    const handleChange = (e) => {
         const { name, value } = e.target;
         setPostData(prevState => ({
-        ...prevState,
-        [name]: value
+            ...prevState,
+            [name]: value,
+            user_id: currentUser.id
+        }))
+        setPictureData(prevState => ({
+            ...prevState,
+            [name]: value,
+            post_id: postId
         }))
     }
 
-    const handlePictureChange = (e) => {
-        const { name, value } = e.target;
-        setPictureData(prevState => ({
-        ...prevState,
-        [name]: value
-        }))
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        handleCreate(postData, postId, pictureData)
     }
 
     return (
-        <form onSubmit={(e) => {
-            e.preventDefault();
-            handlePictureCreate(pictureData);
-            handlePostCreate(postData);
-        }}>
+        <form onSubmit={handleSubmit}>
         <h3>Create Post</h3>
         <label>
             Image Url:
@@ -55,7 +59,7 @@ export default function CreatePost(props) {
             type='text'
             name='img_url'
             value={img_url}
-            onChange={handlePictureChange}
+            onChange={handleChange}
             />
         </label>
         <label>
@@ -64,7 +68,7 @@ export default function CreatePost(props) {
             type='text'
             name='content'
             value={content}
-            onChange={handlePostChange}
+            onChange={handleChange}
             />
         </label>
         <button>Submit</button>
