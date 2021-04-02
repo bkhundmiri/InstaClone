@@ -12,7 +12,7 @@ class PicturesController < ApplicationController
   # POST /pictures
   def create
     @post = Post.find(params[:post_id])
-    @picture = Picture.where(post_id: @post.id).new(picture_params)
+    @picture = Picture.new(picture_params)
 
     if @picture.save
       render json: @picture, status: :created
