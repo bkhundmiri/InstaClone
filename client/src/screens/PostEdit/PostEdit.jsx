@@ -1,9 +1,11 @@
 import React from 'react';
 
-function EditPost(props) {
+function PostEdit(props) {
 
     return (
-        <div></div>
+        <div>
+            Edit
+        </div>
         // <form onSubmit={(e) => {
         //     e.preventDefault();
         //     handleUpdate(id, formData);
@@ -23,4 +25,4 @@ function EditPost(props) {
     )
 }
 
-export default EditPost;
+export default PostEdit;

@@ -1,13 +1,12 @@
 // package imports
 import { useState, useEffect } from 'react'
-import { Route, Switch, useHistory } from 'react-router';
+import { Redirect, Route, Switch, useHistory } from 'react-router';
 
 // component imports
 import './App.css';
 import MainContainer from './containers/MainContainer/MainContainer';
 import Login from './screens/Login/Login';
 import Register from './screens/Register/Register';
-import Layout from './layouts/Layout'
 
 // services imports
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
@@ -56,10 +55,12 @@ function App() {
             />
           </Route>
           <Route path='/'>
-            <MainContainer
-              currentUser={currentUser}
-              handleLogout={handleLogout}
-            />
+            { currentUser ? (
+                <MainContainer
+                  currentUser={currentUser}
+                  handleLogout={handleLogout}
+                />
+              ) : <Redirect to='/login' />}
           </Route>
         </Switch>
     </div>

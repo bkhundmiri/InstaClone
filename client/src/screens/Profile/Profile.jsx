@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 function Profile(props) {
     const { oneUserPost, currentUser } = props
@@ -9,11 +10,13 @@ function Profile(props) {
             <div>
                 <div>{currentUser.username}</div>
             </div>
-            {oneUserPost.map((post) => (
-                <div>{post.img_url}</div>
+            {oneUserPost.map((post, index) => (
+                <div key={index}>
+                    <Link to={`/posts/${post.id}/details`}><img src={post.img_url} alt=""/></Link>
+                </div>
             ))}
         </div>
-    ) : null
+    ) : <div>Loading.....</div>
 }
 
 export default Profile;
