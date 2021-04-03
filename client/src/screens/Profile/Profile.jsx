@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 function Profile(props) {
     const { oneUserPost, currentUser } = props
-    console.log(oneUserPost);
 
     return currentUser ? ( 
         <div>

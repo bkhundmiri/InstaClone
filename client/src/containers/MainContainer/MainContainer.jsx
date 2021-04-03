@@ -49,12 +49,6 @@ function MainContainer(props) {
 
 
 
-    console.log(allPosts);
-    console.log(currentUser);
-    console.log(oneUserPost);
-
-    // console.log(allPosts);
-
     return (
         <Layout
             currentUser={currentUser}
