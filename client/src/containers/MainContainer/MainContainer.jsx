@@ -20,7 +20,7 @@ function MainContainer(props) {
     const [oneUserPost, setOneUserPost] = useState([]);
 
     const { currentUser, setCurrentUser } = props;
-    const { id } = currentUser
+    // const { id } = currentUser
 
     // const [userId, setUserId] = useState()
 
@@ -34,11 +34,11 @@ function MainContainer(props) {
     
     useEffect(() => {
         const fetchOneUserPosts = async () => {
-            const oneUserPostData = await getUserPosts(id); 
+            const oneUserPostData = await getUserPosts(currentUser?.id); 
             setOneUserPost(oneUserPostData);
         } 
         fetchOneUserPosts();
-    }, [allPosts, id]);
+    }, [allPosts, currentUser?.id]);
 
     useEffect(() => {
         const fetchAllPosts = async () => {
@@ -92,7 +92,7 @@ function MainContainer(props) {
                 </Route>
             </Switch>
         </Layout>
-    );
+    ); 
 }
 
 export default MainContainer;

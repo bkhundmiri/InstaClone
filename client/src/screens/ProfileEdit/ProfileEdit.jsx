@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
-import { putPost } from "../../services/posts";
+import { useHistory } from "react-router-dom";
 import { editUser } from "../../services/users";
 
 function PostEdit(props) {
@@ -136,7 +135,7 @@ function PostEdit(props) {
                     onChange={handleChange}
                 />
             </label>
-            <button disabled={!username || !email}>Submit</button>
+            <button disabled={!username || !email}>Save Changes</button>
         </form>
     );
 }

@@ -18,7 +18,11 @@ function App() {
   useEffect(() => {
     const handleVerify = async () => {
       const userData = await verifyUser();
-      setCurrentUser(userData);
+      if (userData) {
+        setCurrentUser(userData);
+      } else {
+        history.push('/login')
+      }
     }
     handleVerify();
   }, [])
@@ -55,13 +59,11 @@ function App() {
             />
           </Route>
           <Route path='/'>
-            { currentUser ? (
-                <MainContainer
-                  currentUser={currentUser}
-                  setCurrentUser={setCurrentUser}
-                  handleLogout={handleLogout}
-                />
-              ) : <Redirect to='/login' />}
+            <MainContainer
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+              handleLogout={handleLogout}
+            />
           </Route>
         </Switch>
     </div>

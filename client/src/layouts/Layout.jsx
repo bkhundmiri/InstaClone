@@ -22,7 +22,7 @@ function Layout(props) {
                 <Link to='/posts/new'><div><FiPlusSquare/></div></Link>
                 {/* <Link to='/users/search'><div>Search User</div></Link> */}
                 <Link to='/profile'>
-                    {currentUser.img_url ? <img className='profile-pic-footer' src={currentUser.img_url} alt="profile-pic"/> : <BsFillPersonFill/> }
+                    {currentUser?.img_url ? <img className='profile-pic-footer' src={currentUser?.img_url} alt="profile-pic"/> : <BsFillPersonFill/> }
                 </Link>
             </footer>
         </>

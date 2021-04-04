@@ -1,6 +1,7 @@
 .post-container {
     max-width: 400px;
     max-height: 600px;
+    background-color: #0C0E0F;
     border-left: 1px solid #6C757D;
     border-right: 1px solid #6C757D;
     border-top: 1px solid #6C757D;
