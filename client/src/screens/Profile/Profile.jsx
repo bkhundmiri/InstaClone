@@ -8,6 +8,7 @@ function Profile(props) {
         <div>
             <div>
                 <div>{currentUser.username}</div>
+                <Link to='/profile/edit'>Edit Profile</Link>
             </div>
             {oneUserPost.map((post, index) => (
                 <div key={index}>

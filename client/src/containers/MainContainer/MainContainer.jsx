@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import Layout from "../../layouts/Layout";
 import Feed from "../../screens/Feed/Feed";
 import Profile from "../../screens/Profile/Profile"
+import ProfileEdit from "../../screens/ProfileEdit/ProfileEdit"
 import CreatePost from "../../screens/CreatePost/CreatePost";
 import PostDetails from "../../screens/PostDetail/PostDetail"
 
@@ -18,7 +19,7 @@ function MainContainer(props) {
     const [allPosts, setAllPosts] = useState([]);
     const [oneUserPost, setOneUserPost] = useState([]);
 
-    const { currentUser } = props;
+    const { currentUser, setCurrentUser } = props;
     const { id } = currentUser
 
     // const [userId, setUserId] = useState()
@@ -71,6 +72,12 @@ function MainContainer(props) {
                     <CreatePost 
                         currentUser={currentUser}
                         setAllPosts={setAllPosts}
+                    />
+                </Route>
+                <Route path='/profile/edit'>
+                    <ProfileEdit
+                        currentUser={currentUser}
+                        setCurrentUser={setCurrentUser}
                     />
                 </Route>
                 <Route path='/profile'>

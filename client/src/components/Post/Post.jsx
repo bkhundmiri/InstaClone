@@ -1,11 +1,12 @@
 import React from 'react';
+import './Post.css'
 
 function Post(props) {
     const { post } = props
     // console.log(post);
     
     return (
-        <div>
+        <div className='post-container'>
             <div>
                 {post.user ? <div>{post.user.username}</div> : null}
             </div>

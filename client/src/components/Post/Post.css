@@ -1,0 +1,14 @@
+.post-container {
+    max-width: 400px;
+    max-height: 600px;
+    border-left: 1px solid #6C757D;
+    border-right: 1px solid #6C757D;
+    border-top: 1px solid #6C757D;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 auto;
+}
+
+.post-container img {
+    min-width: 100%;
+}

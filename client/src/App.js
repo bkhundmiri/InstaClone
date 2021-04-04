@@ -58,6 +58,7 @@ function App() {
             { currentUser ? (
                 <MainContainer
                   currentUser={currentUser}
+                  setCurrentUser={setCurrentUser}
                   handleLogout={handleLogout}
                 />
               ) : <Redirect to='/login' />}

@@ -1,7 +1,17 @@
 nav {
     display: flex;
+    justify-content: left;
+    align-items: center;
     position: sticky;
     top: 0;
+    background-color: #0C0E0F;
+    height: 5vh;
+}
+
+.logo-title {
+    font-size: 30px;
+    font-family: 'Marck Script', cursive;
+    padding-left: 20px;
 }
 
 footer {
@@ -11,8 +21,22 @@ footer {
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
+    height: 5vh;
+    background-color: #0C0E0F;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.profile-pic-footer {
+    width: 20px;
+    height: 20px
 }
 
 .props-children-container {
-    min-height: 100vh;
+    min-height: 90vh;
+    background-color: #0C0E0F;
 }
