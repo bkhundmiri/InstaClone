@@ -1,26 +1,34 @@
 import React from 'react';
 import './Post.css'
+import { FaUserCircle } from 'react-icons/fa'
+import { Link } from 'react-router-dom';
 
 function Post(props) {
     const { post } = props
-    // console.log(post);
     
     return post.user ? (
         <div className='post-container'>
             <div className='post-username-container'>
-                <div>{post.user.username}</div>
+                <Link>
+                    {post.user?.img_url ? 
+                    <img className='post-user-img' src={post.user?.img_url} alt=""/>
+                    : 
+                    <FaUserCircle size='30px' color='white'/>}
+                </Link>
+                <Link>{post.user.username}</Link>
             </div>
             
             <img className='post-img' src={post.img_url} alt=""/>
             
             <div className='post-content-container'>
-                <div className='post-content'>{post.content}</div>
+                <div className='post-username'>{post.user?.username}</div>
+                <div className='post-content'>{post.content}</div>    
+            </div>
+            <div className='post-comments-container'>
                 {post.comments.length ? 
-                <div className='post-comments-container'>
-                    {post.comments.map((comment) => (
-                        <div key={comment.id} className='post-comment'>{comment.content}</div>
-                    ))}
-                </div> : <div>No Comments</div>}
+                <Link>View all {post.comments.length} comments</Link> 
+                : <div>No Comments</div>}
+                <Link>Add a comment...</Link>
             </div>
         </div>
     ) : <div>Loading...</div>

@@ -17,8 +17,8 @@ function Feed (props) {
 
     return (
         <div className='feed-container'>
-            {allFeedPosts.map((post, index) => (
-                <Post key={index} post={post} />
+            {allFeedPosts.map((post) => (
+                <Post key={post.id} post={post} />
             ))}
         </div>
     );
