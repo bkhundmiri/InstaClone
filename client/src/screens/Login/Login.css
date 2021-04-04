@@ -48,12 +48,18 @@
 
 .bottomlink {
     position: absolute;
+    display: flex;
+    align-self: center;
+    justify-content: center;
     bottom: 0;
     color: #6C757D;
-    width: 100vw;
-    margin-top: 40px;
+    width: 80%;
     border-top: 1px solid #6C757D;
     padding: 20px;
+}
+
+.bottomlink div {
+    margin-right: 5px;
 }
 
 .bottomlink a {

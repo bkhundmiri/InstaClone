@@ -48,7 +48,7 @@ export default function Login(props) {
         <button disabled={!username || !password}>Log In</button>
       </form>
       <div className='bottomlink sign-up-link'>
-        Don't have an account? 
+        <div>Don't have an account?</div>
         <Link to='/register'> Sign Up.</Link>
       </div>
     </div>

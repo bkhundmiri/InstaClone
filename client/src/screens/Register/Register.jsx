@@ -62,7 +62,7 @@ export default function Register(props) {
         <button disabled={!username || !password || !email}>Submit</button>
       </form>
       <div className="bottomlink">
-        Have an account?
+        <div>Have an account?</div> 
         <Link to="/login"> Log In.</Link>
       </div>
     </div>
