@@ -19,15 +19,13 @@ export default function FoodDetails(props) {
             setOnePost(postData);
         }
         fetchOnePost()
-    }, [])
+    }, [id])
 
     const handleDelete = async () => {
         await destroyPost(id);
         setAllPosts(prevState => prevState.filter(post => post.id !== id))
         history.push(`/profile`);
     }
-
-    console.log(onePost);
 
     return onePost ? (
         <div>

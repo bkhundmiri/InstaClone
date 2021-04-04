@@ -5,10 +5,8 @@ import Post from "../../components/Post/Post"
 import { getAllPosts } from "../../services/posts";
 
 function Feed (props) {
-    const { allPosts, setAllPosts } = props;
     const [allFeedPosts, setAllFeedPosts] = useState([])
     const [toggleFetch, setToggleFetch] = useState(false)
-    const size = 10
 
     useEffect(() => {
         const fetchAllFeedPosts = async () => {

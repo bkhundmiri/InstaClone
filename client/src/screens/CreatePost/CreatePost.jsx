@@ -5,7 +5,7 @@ import { postPost } from '../../services/posts';
 
 export default function CreatePost(props) {
     const history = useHistory()
-    const { setAllPosts, currentUser } = props
+    const { setAllPosts } = props
     
     const [postData, setPostData] = useState({
         content: '',

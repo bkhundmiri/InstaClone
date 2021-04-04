@@ -21,7 +21,7 @@ function MainContainer(props) {
     const { currentUser } = props;
     const { id } = currentUser
 
-    const [userId, setUserId] = useState()
+    // const [userId, setUserId] = useState()
 
   // useEffect(() => {
   //     const fetchAllUsers = async () => {
@@ -37,7 +37,7 @@ function MainContainer(props) {
             setOneUserPost(oneUserPostData);
         } 
         fetchOneUserPosts();
-    }, [allPosts]);
+    }, [allPosts, id]);
 
     useEffect(() => {
         const fetchAllPosts = async () => {
@@ -62,7 +62,9 @@ function MainContainer(props) {
                 </Route>
                 <Route path='/posts/:id/edit'>
                     <PostEdit
-                        currentUser={currentUser}
+                        // currentUser={currentUser}
+                        allPosts={allPosts}
+                        setAllPosts={setAllPosts}
                     />
                 </Route>
                 <Route path='/posts/new'>

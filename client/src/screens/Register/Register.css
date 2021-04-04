@@ -1,0 +1,11 @@
+.register-title {
+    position: absolute;
+    display: flex;
+    top: 0;
+    align-self: center;
+}
+
+#username-input {
+    margin-bottom: 40px;
+    margin-top: 15px;
+}
