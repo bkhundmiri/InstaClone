@@ -1,6 +1,6 @@
 // package imports
 import { useState, useEffect } from 'react'
-import { Redirect, Route, Switch, useHistory } from 'react-router';
+import { Route, Switch, useHistory } from 'react-router';
 
 // component imports
 import './App.css';

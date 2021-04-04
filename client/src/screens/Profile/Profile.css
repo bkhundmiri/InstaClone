@@ -1,0 +1,24 @@
+p {
+    margin: 0;
+}
+
+
+
+.profile-posts-container {
+    max-width: 400px;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    margin: 0 auto;
+}
+
+.post-img-container {
+    display: inline-flex;
+    flex-direction: row wrap;
+    max-width: 32.8%;
+    padding: 0 1px;
+}
+
+.profile-post-img {
+    max-width: 100%;
+}

@@ -1,21 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import ProfileBanner from '../../components/ProfileBanner/ProfileBanner';
+
+import './Profile.css'
 
 function Profile(props) {
     const { oneUserPost, currentUser } = props
 
     return currentUser ? ( 
-        <div>
-            <div>
-                <div>{currentUser.username}</div>
-                <Link to='/profile/edit'>Edit Profile</Link>
-            </div>
-            {oneUserPost.map((post, index) => (
-                <div key={index}>
-                    <Link to={`/posts/${post.id}/details`}><img src={post.img_url} alt=""/></Link>
+        <>
+            <ProfileBanner
+                currentUser={currentUser}
+                oneUserPost={oneUserPost}
+            />
+            <div className='profile-posts-container'>
+            {oneUserPost.map((post) => (
+                <div className='post-img-container' key={post.id}>
+                    <Link to={`/posts/${post.id}/details`}><img className='profile-post-img' src={post.img_url} alt=""/></Link>
                 </div>
             ))}
-        </div>
+            </div>
+        </>
     ) : <div>Loading.....</div>
 }
 
