@@ -1,36 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 
-
 import Layout from "../../layouts/Layout";
 import Feed from "../../screens/Feed/Feed";
 import Profile from "../../screens/Profile/Profile"
 import ProfileEdit from "../../screens/ProfileEdit/ProfileEdit"
 import CreatePost from "../../screens/CreatePost/CreatePost";
+import PostEdit from "../../screens/PostEdit/PostEdit";
 import PostDetails from "../../screens/PostDetail/PostDetail"
 
-
 import { getAllPosts, getUserPosts } from "../../services/posts";
-import PostEdit from "../../screens/PostEdit/PostEdit";
-
 
 function MainContainer(props) {
-  // const [allUsers, setAllUsers] = useState([])
     const [allPosts, setAllPosts] = useState([]);
     const [oneUserPost, setOneUserPost] = useState([]);
 
-    const { currentUser, setCurrentUser } = props;
-    // const { id } = currentUser
-
-    // const [userId, setUserId] = useState()
-
-  // useEffect(() => {
-  //     const fetchAllUsers = async () => {
-  //         const allUserData = await getAllUsers()
-  //         setAllUsers(allUserData)
-  //     }
-  //     fetchAllUsers()
-  // }, [])
+    const { currentUser, setCurrentUser, handleLogout } = props;
     
     useEffect(() => {
         const fetchOneUserPosts = async () => {
@@ -48,8 +33,6 @@ function MainContainer(props) {
         fetchAllPosts()
     }, [])
 
-
-
     return (
         <Layout
             currentUser={currentUser}
@@ -61,6 +44,7 @@ function MainContainer(props) {
                         setAllPosts={setAllPosts}
                     />
                 </Route>
+
                 <Route path='/posts/:id/edit'>
                     <PostEdit
                         // currentUser={currentUser}
@@ -68,25 +52,30 @@ function MainContainer(props) {
                         setAllPosts={setAllPosts}
                     />
                 </Route>
+
                 <Route path='/posts/new'>
                     <CreatePost 
                         currentUser={currentUser}
                         setAllPosts={setAllPosts}
                     />
                 </Route>
+
                 <Route path='/profile/edit'>
                     <ProfileEdit
                         currentUser={currentUser}
                         setCurrentUser={setCurrentUser}
                     />
                 </Route>
+
                 <Route path='/profile'>
                     <Profile 
                         currentUser={currentUser}
                         oneUserPost={oneUserPost}
                         setOneUserPost={setOneUserPost}
+                        handleLogout={handleLogout}
                     />
                 </Route>
+                
                 <Route path='/feed'>
                     <Feed />
                 </Route>

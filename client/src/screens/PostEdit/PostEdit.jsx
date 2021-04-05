@@ -56,6 +56,7 @@ function PostEdit(props) {
           <BsFillImageFill size="350px" color="gray" />
         )}
       </div>
+
       <form
         className="post-form"
         onSubmit={(e) => {
@@ -78,6 +79,7 @@ function PostEdit(props) {
           onChange={handleChange}
           placeholder="Write a caption..."
         />
+        
         <button className="create-form-button" disabled={!formData.img_url}>
           Save Changes
         </button>

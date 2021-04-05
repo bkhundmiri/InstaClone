@@ -4,7 +4,7 @@ import { getAllPosts } from "../../services/posts";
 
 import './Feed.css'
 
-function Feed (props) {
+function Feed () {
     const [allFeedPosts, setAllFeedPosts] = useState([])
 
     useEffect(() => {

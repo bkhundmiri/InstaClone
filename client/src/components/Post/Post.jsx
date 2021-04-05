@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import './Post.css'
 import { Link } from 'react-router-dom';
 
 import { FaUserCircle } from 'react-icons/fa'
 import { BsThreeDots } from 'react-icons/bs'
 
 import Modal from "../../components/Modal/Modal";
+
+import './Post.css'
 
 function Post(props) {
     const [open, setOpen] = useState(false);
@@ -24,6 +25,7 @@ function Post(props) {
                     </Link>
                     <Link to=''>{post.user.username}</Link>
                 </div>
+                
                 <div className='post-buttons-container'>
                 {
                     currentUser?.id === post.user_id &&

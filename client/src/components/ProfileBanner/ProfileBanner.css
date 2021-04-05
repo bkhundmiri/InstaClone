@@ -4,8 +4,19 @@
     width: 100vw;
 }
 
-.profile-username {
+.profile-username-container {
     font-size: 25px;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.profile-username {
+    padding-left: 5%;
+}
+
+.logout-icon {
+    margin-right: 5%;
+    cursor: pointer;
 }
 
 .profile-banner-container {

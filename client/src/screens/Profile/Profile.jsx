@@ -5,14 +5,16 @@ import ProfileBanner from '../../components/ProfileBanner/ProfileBanner';
 import './Profile.css'
 
 function Profile(props) {
-    const { oneUserPost, currentUser } = props
+    const { oneUserPost, currentUser, handleLogout } = props
 
     return currentUser ? ( 
         <>
             <ProfileBanner
                 currentUser={currentUser}
                 oneUserPost={oneUserPost}
+                handleLogout={handleLogout}
             />
+            
             <div className='profile-posts-container'>
             {oneUserPost.map((post) => (
                 <div className='post-img-container' key={post.id}>
