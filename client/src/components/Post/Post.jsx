@@ -24,6 +24,7 @@ function Post(props) {
                     </Link>
                     <Link to=''>{post.user.username}</Link>
                 </div>
+                
                 <div className='post-buttons-container'>
                 {
                     currentUser?.id === post.user_id &&
