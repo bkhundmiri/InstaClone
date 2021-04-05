@@ -2,6 +2,9 @@ import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { postPost } from '../../services/posts';
 
+import { BsFillImageFill } from 'react-icons/bs'
+
+import './CreatePost.css'
 
 export default function CreatePost(props) {
     const history = useHistory()
@@ -11,6 +14,7 @@ export default function CreatePost(props) {
         content: '',
         img_url: ''
     })
+    const [imgLoaded, setImgLoaded] = useState(false)
     
     const { content, img_url } = postData
 
@@ -33,28 +37,38 @@ export default function CreatePost(props) {
         handlePostCreate(postData)
     }
 
+    const handleImgLoaded = () => {
+        setImgLoaded(true)
+    }
+
     return (
-        <form onSubmit={handleSubmit}>
-        <h3>Create Post</h3>
-        <label>
-            Image Url:
-            <input
-            type='text'
-            name='img_url'
-            value={img_url}
-            onChange={handlePostChange}
-            />
-        </label>
-        <label>
-            Status:
-            <input
-            type='text'
-            name='content'
-            value={content}
-            onChange={handlePostChange}
-            />
-        </label>
-        <button>Submit</button>
-        </form>
+        <>
+            <h3>Create A New Post</h3>
+            <div className='img-preview'>
+                {imgLoaded ? 
+                <img className='create-img' src={postData.img_url} alt='New Post'/>
+                : <BsFillImageFill size='350px' color='gray'/>}
+            </div>
+            <form className='post-form' onSubmit={handleSubmit}>
+                <input
+                    type='text'
+                    name='img_url'
+                    value={img_url}
+                    onChange={handlePostChange}
+                    onBlur={handleImgLoaded}
+                    placeholder='Image URL'
+                    required
+                />
+                <input
+                    type='textarea'
+                    name='content'
+                    value={content}
+                    onChange={handlePostChange}
+                    placeholder='Write a caption...'
+                />
+                <button className='create-form-button' disabled={!img_url}>Share</button>
+            </form>
+        </>
+        
     )
 }

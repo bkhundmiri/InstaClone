@@ -9,13 +9,13 @@ function Post(props) {
     return post.user ? (
         <div className='post-container'>
             <div className='post-username-container'>
-                <Link>
+                <Link to=''>
                     {post.user?.img_url ? 
                     <img className='post-user-img' src={post.user?.img_url} alt=""/>
                     : 
                     <FaUserCircle size='30px' color='white'/>}
                 </Link>
-                <Link>{post.user.username}</Link>
+                <Link to=''>{post.user.username}</Link>
             </div>
             
             <img className='post-img' src={post.img_url} alt=""/>
@@ -26,9 +26,9 @@ function Post(props) {
             </div>
             <div className='post-comments-container'>
                 {post.comments.length ? 
-                <Link>View all {post.comments.length} comments</Link> 
+                <Link to=''>View all {post.comments.length} comments</Link> 
                 : <div>No Comments</div>}
-                <Link>Add a comment...</Link>
+                <Link to=''>Add a comment...</Link>
             </div>
         </div>
     ) : <div>Loading...</div>
