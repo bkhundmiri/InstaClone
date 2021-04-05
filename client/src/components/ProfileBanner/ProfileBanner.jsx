@@ -1,16 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
+import { BsBoxArrowInRight } from 'react-icons/bs'
+
 import './ProfileBanner.css'
 
 function ProfileBanner(props) {
 
-    const { currentUser, oneUserPost } = props
+    const { currentUser, oneUserPost, handleLogout } = props
 
     return (
         <>
             <div className='user-details-container'>
-                <div className='profile-username'>{currentUser?.username}</div>
+                <div className='profile-username-container'>
+                    <div className='profile-username'>{currentUser?.username}</div>
+                    <BsBoxArrowInRight className='logout-icon' onClick={handleLogout}/>
+                </div>
 
                 <div className='profile-banner-container'>
                     <img className='profile-banner' src={currentUser?.img_url} alt=""/>

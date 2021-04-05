@@ -15,7 +15,7 @@ function MainContainer(props) {
     const [allPosts, setAllPosts] = useState([]);
     const [oneUserPost, setOneUserPost] = useState([]);
 
-    const { currentUser, setCurrentUser } = props;
+    const { currentUser, setCurrentUser, handleLogout } = props;
     
     useEffect(() => {
         const fetchOneUserPosts = async () => {
@@ -72,6 +72,7 @@ function MainContainer(props) {
                         currentUser={currentUser}
                         oneUserPost={oneUserPost}
                         setOneUserPost={setOneUserPost}
+                        handleLogout={handleLogout}
                     />
                 </Route>
                 
