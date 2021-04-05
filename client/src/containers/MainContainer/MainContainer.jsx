@@ -20,17 +20,6 @@ function MainContainer(props) {
     const [oneUserPost, setOneUserPost] = useState([]);
 
     const { currentUser, setCurrentUser } = props;
-    // const { id } = currentUser
-
-    // const [userId, setUserId] = useState()
-
-  // useEffect(() => {
-  //     const fetchAllUsers = async () => {
-  //         const allUserData = await getAllUsers()
-  //         setAllUsers(allUserData)
-  //     }
-  //     fetchAllUsers()
-  // }, [])
     
     useEffect(() => {
         const fetchOneUserPosts = async () => {
