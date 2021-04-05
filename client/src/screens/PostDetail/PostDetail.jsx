@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import { destroyPost, getOnePost } from '../../services/posts';
 
+import Post from "../../components/Post/Post"
 import Modal from "../../components/Modal/Modal"
 
 export default function FoodDetails(props) {
@@ -29,7 +30,16 @@ export default function FoodDetails(props) {
 
     return onePost ? (
         <div>
-            <div>{onePost.user.username}</div>
+            {/* <div>{onePost.user.username}</div>
+            
+            <img src={onePost.img_url} alt=''/>
+            <div>{onePost.content}</div>
+            {onePost.comments.length ? 
+            <div>
+                {onePost.comments.map((comment) => (
+                    <div>{comment.content}</div>
+                ))}
+            </div> : <div>No Comments</div>} */}
             <div>
             {
                 currentUser?.id === onePost.user_id &&
@@ -39,14 +49,7 @@ export default function FoodDetails(props) {
                 </>
             }
             </div>
-            <img src={onePost.img_url} alt=''/>
-            <div>{onePost.content}</div>
-            {onePost.comments.length ? 
-            <div>
-                {onePost.comments.map((comment) => (
-                    <div>{comment.content}</div>
-                ))}
-            </div> : <div>No Comments</div>}
+            <Post post={onePost} />
             {open && (
                 <Modal
                     open={open}
