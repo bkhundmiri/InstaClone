@@ -44,6 +44,7 @@ function MainContainer(props) {
                         setAllPosts={setAllPosts}
                     />
                 </Route>
+
                 <Route path='/posts/:id/edit'>
                     <PostEdit
                         // currentUser={currentUser}
@@ -51,18 +52,21 @@ function MainContainer(props) {
                         setAllPosts={setAllPosts}
                     />
                 </Route>
+
                 <Route path='/posts/new'>
                     <CreatePost 
                         currentUser={currentUser}
                         setAllPosts={setAllPosts}
                     />
                 </Route>
+
                 <Route path='/profile/edit'>
                     <ProfileEdit
                         currentUser={currentUser}
                         setCurrentUser={setCurrentUser}
                     />
                 </Route>
+
                 <Route path='/profile'>
                     <Profile 
                         currentUser={currentUser}
@@ -70,6 +74,7 @@ function MainContainer(props) {
                         setOneUserPost={setOneUserPost}
                     />
                 </Route>
+                
                 <Route path='/feed'>
                     <Feed />
                 </Route>
