@@ -21,7 +21,6 @@ function ModalDelete(props) {
                     setDeleteOpen(false)
                     setOpen(false)
                 }}>Cancel</div>
-                
             </div>
         </div>
     );
