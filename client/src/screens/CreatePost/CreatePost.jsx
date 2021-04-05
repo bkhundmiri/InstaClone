@@ -44,11 +44,13 @@ export default function CreatePost(props) {
     return (
         <>
             <h3>Create A New Post</h3>
+
             <div className='img-preview'>
                 {imgLoaded ? 
                 <img className='create-img' src={postData.img_url} alt='New Post'/>
                 : <BsFillImageFill size='350px' color='gray'/>}
             </div>
+            
             <form className='post-form' onSubmit={handleSubmit}>
                 <input
                     type='text'
