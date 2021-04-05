@@ -3,8 +3,10 @@ import './Post.css'
 import { FaUserCircle } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
 
+import Modal from "../../components/Modal/Modal";
+
 function Post(props) {
-    const { post } = props
+    const { post, currentUser, open, setOpen, handleDelete } = props
     
     return post.user ? (
         <div className='post-container'>
@@ -16,6 +18,22 @@ function Post(props) {
                     <FaUserCircle size='30px' color='white'/>}
                 </Link>
                 <Link to=''>{post.user.username}</Link>
+                <div>
+                {
+                    currentUser?.id === post.user_id &&
+                    <>
+                        <Link to={`/posts/${post.id}/edit`}><button>Edit</button></Link>
+                        <button onClick={() => setOpen(post.id)}>delete</button>
+                    </>
+                }
+                {open && (
+                    <Modal
+                        open={open}
+                        setOpen={setOpen}
+                        handleDelete={handleDelete}
+                    />
+                )}
+                </div>
             </div>
             
             <img className='post-img' src={post.img_url} alt=""/>

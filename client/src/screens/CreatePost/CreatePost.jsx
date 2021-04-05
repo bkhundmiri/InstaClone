@@ -69,6 +69,5 @@ export default function CreatePost(props) {
                 <button className='create-form-button' disabled={!img_url}>Share</button>
             </form>
         </>
-        
     )
 }
