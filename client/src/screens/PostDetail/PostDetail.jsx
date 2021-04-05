@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { destroyPost, getOnePost } from "../../services/posts";
 
 import Post from "../../components/Post/Post";
