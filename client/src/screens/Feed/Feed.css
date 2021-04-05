@@ -1,0 +1,11 @@
+.feed-container {
+    height: 86vh;
+    overflow: auto;
+    background-color: #212529;
+}
+
+.posts-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
