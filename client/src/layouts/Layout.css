@@ -1,11 +1,27 @@
 nav {
     display: flex;
-    justify-content: left;
+    flex-flow: row nowrap;
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     background-color: #0C0E0F;
-    height: 5vh;
+    height: 7vh;
+}
+
+nav a {
+    color: white;
+
+}
+
+.nav-links {
+    width: 40%;
+    height: 100%;
+    display: none;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #0C0E0F;
 }
 
 .logo-title {
@@ -17,19 +33,25 @@ nav {
 footer {
     position: sticky;
     bottom: 0;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 5vh;
+    height: 7vh;
     background-color: #0C0E0F;
 }
 
-footer a {
+.footer-links a {
     color: white;
     text-decoration: none;
     font-size: 25px;
 }
+
+.footer-links {
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #0C0E0F;
+}
+
 
 .profile-pic-footer {
     width: 35px;
@@ -38,6 +60,16 @@ footer a {
 }
 
 .props-children-container {
-    min-height: 90vh;
+    min-height: 86vh;
     background-color: #0C0E0F;
+}
+
+@media all and (min-width: 600px) {
+    .footer-links {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+    }
 }

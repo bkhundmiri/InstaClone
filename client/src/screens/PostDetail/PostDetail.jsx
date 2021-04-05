@@ -36,6 +36,7 @@ export default function FoodDetails(props) {
         setOpen={setOpen}
         handleDelete={handleDelete}
       />
+      
     </>
   ) : (
     <div>Loading...</div>
