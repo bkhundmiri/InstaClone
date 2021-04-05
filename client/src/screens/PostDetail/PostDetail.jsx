@@ -6,7 +6,6 @@ import Post from "../../components/Post/Post";
 
 export default function FoodDetails(props) {
   const [onePost, setOnePost] = useState(null);
-  const [open, setOpen] = useState(false);
 
   const { id } = useParams();
   const history = useHistory();
@@ -32,11 +31,8 @@ export default function FoodDetails(props) {
       <Post
         post={onePost}
         currentUser={currentUser}
-        open={open}
-        setOpen={setOpen}
         handleDelete={handleDelete}
       />
-      
     </>
   ) : (
     <div>Loading...</div>

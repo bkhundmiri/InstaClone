@@ -1,33 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Post.css'
-import { FaUserCircle } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
+
+import { FaUserCircle } from 'react-icons/fa'
+import { BsThreeDots } from 'react-icons/bs'
 
 import Modal from "../../components/Modal/Modal";
 
 function Post(props) {
-    const { post, currentUser, open, setOpen, handleDelete } = props
+    const [open, setOpen] = useState(false);
+
+    const { post, currentUser, handleDelete } = props
     
     return post.user ? (
         <div className='post-container'>
-            <div className='post-username-container'>
-                <Link to=''>
-                    {post.user?.img_url ? 
-                    <img className='post-user-img' src={post.user?.img_url} alt=""/>
-                    : 
-                    <FaUserCircle size='30px' color='white'/>}
-                </Link>
-                <Link to=''>{post.user.username}</Link>
-                <div>
+            <div className='post-top-container'>
+                <div className='post-username-container'>
+                    <Link to=''>
+                        {post.user?.img_url ? 
+                        <img className='post-user-img' src={post.user?.img_url} alt=""/>
+                        : 
+                        <FaUserCircle size='30px' color='white'/>}
+                    </Link>
+                    <Link to=''>{post.user.username}</Link>
+                </div>
+                <div className='post-buttons-container'>
                 {
                     currentUser?.id === post.user_id &&
                     <>
-                        <Link to={`/posts/${post.id}/edit`}><button>Edit</button></Link>
-                        <button onClick={() => setOpen(post.id)}>delete</button>
+                        {/* <Link to={`/posts/${post.id}/edit`}><button>Edit</button></Link>
+                        <button onClick={() => setOpen(post.id)}>delete</button> */}
+                        <BsThreeDots size='30px' className='post-kebob' onClick={() => setOpen(post.id)}/>
                     </>
                 }
                 {open && (
                     <Modal
+                        post={post}
                         open={open}
                         setOpen={setOpen}
                         handleDelete={handleDelete}
