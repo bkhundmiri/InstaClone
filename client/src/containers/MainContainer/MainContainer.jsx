@@ -1,21 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 
-
 import Layout from "../../layouts/Layout";
 import Feed from "../../screens/Feed/Feed";
 import Profile from "../../screens/Profile/Profile"
 import ProfileEdit from "../../screens/ProfileEdit/ProfileEdit"
 import CreatePost from "../../screens/CreatePost/CreatePost";
+import PostEdit from "../../screens/PostEdit/PostEdit";
 import PostDetails from "../../screens/PostDetail/PostDetail"
 
-
 import { getAllPosts, getUserPosts } from "../../services/posts";
-import PostEdit from "../../screens/PostEdit/PostEdit";
-
 
 function MainContainer(props) {
-  // const [allUsers, setAllUsers] = useState([])
     const [allPosts, setAllPosts] = useState([]);
     const [oneUserPost, setOneUserPost] = useState([]);
 
@@ -36,8 +32,6 @@ function MainContainer(props) {
         };
         fetchAllPosts()
     }, [])
-
-
 
     return (
         <Layout
