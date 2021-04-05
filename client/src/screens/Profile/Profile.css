@@ -2,14 +2,14 @@ p {
     margin: 0;
 }
 
-
-
 .profile-posts-container {
     max-width: 400px;
     display: flex;
     justify-content: flex-start;
     flex-flow: row wrap;
     margin: 0 auto;
+    margin-top: 20px;
+    
 }
 
 .post-img-container {

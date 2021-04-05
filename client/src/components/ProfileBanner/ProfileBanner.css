@@ -1,6 +1,7 @@
 .user-details-container {
     margin-bottom: 20px;
     border-bottom: 1px solid #6C757D;
+    width: 100vw;
 }
 
 .profile-username {
@@ -41,4 +42,11 @@
 	font-size:15px;
 	text-decoration:none;
     margin: 10px 0;
+}
+
+@media all and (min-width: 600px) {
+    .user-details-container {
+        width: 600px;
+        margin: 0 auto;
+    }
 }
