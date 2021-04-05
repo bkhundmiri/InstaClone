@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
+
+import ModalLogout from '../ModalLogout/ModalLogout';
 
 import { BsBoxArrowInRight } from 'react-icons/bs'
 
 import './ProfileBanner.css'
 
 function ProfileBanner(props) {
+    const [logoutOpen, setLogoutOpen] = useState(false)
 
     const { currentUser, oneUserPost, handleLogout } = props
 
@@ -14,8 +17,15 @@ function ProfileBanner(props) {
             <div className='user-details-container'>
                 <div className='profile-username-container'>
                     <div className='profile-username'>{currentUser?.username}</div>
-                    <BsBoxArrowInRight className='logout-icon' onClick={handleLogout}/>
+                    <BsBoxArrowInRight className='logout-icon' onClick={() => setLogoutOpen(true)}/>
                 </div>
+                {logoutOpen && (
+                    <ModalLogout
+                        currentUser={currentUser}
+                        setLogoutOpen={setLogoutOpen}
+                        handleLogout={handleLogout}
+                    />
+                )}
 
                 <div className='profile-banner-container'>
                     <img className='profile-banner' src={currentUser?.img_url} alt=""/>
