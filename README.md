@@ -1,4 +1,6 @@
 # InstaClone
+**Hosted Link**
+https://instaclone-project.netlify.app/
 
 ## Overview
 
