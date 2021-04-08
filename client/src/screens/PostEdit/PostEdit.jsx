@@ -35,7 +35,7 @@ function PostEdit(props) {
         return post.id === Number(id) ? updatedPost : post;
       })
     );
-    history.push("/feed");
+    history.push("/profile");
   };
 
   const handleChange = (e) => {
@@ -79,7 +79,7 @@ function PostEdit(props) {
           onChange={handleChange}
           placeholder="Write a caption..."
         />
-        
+
         <button className="create-form-button" disabled={!formData.img_url}>
           Save Changes
         </button>
